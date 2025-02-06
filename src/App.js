@@ -19,11 +19,11 @@ function App() {
    <PricingCard></PricingCard>
    <DomainSearch/>
    <MigrationSection></MigrationSection>
-   {/* <FeatureCard></FeatureCard>
+   <FeatureCard></FeatureCard>
    <ReviewCard></ReviewCard>
    <PerformanceCard></PerformanceCard>
    <SupportSection></SupportSection>
-   <Footer></Footer> */}
+   <Footer></Footer>
  </>
   );
 }
