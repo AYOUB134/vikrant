@@ -1,3 +1,4 @@
+import hostingicon from './imgs/updatedicon.png'
 const FeatureIcon = ({ type }) => {
     // Different icons based on feature type
     const icons = {
@@ -118,7 +119,7 @@ const FeatureIcon = ({ type }) => {
     <div className="bg-white rounded-lg shadow-lg p-8 flex flex-col">
       <div className="text-center mb-6">
         <img
-          src="https://th.bing.com/th/id/R.1567e518a5f12624b57b0cff22b927ed?rik=RImAzYtmTmlBtg&pid=ImgRaw&r=0"
+          src={hostingicon}
           alt={title}
           className="w-24 h-24 mx-auto mb-4"
         />

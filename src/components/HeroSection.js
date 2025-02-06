@@ -3,7 +3,7 @@ import React from 'react';
 
 const HeroSection = () => {
   return (
-    <section className="bg-[#020B2A] pt-32 pb-40">
+    <section className="bg-[#09113f] pt-32 pb-40">
       <div className="container mx-auto px-6 text-center">
         <h4 className=" md:text-5xl font-bold text-white leading-tight  mx-auto mb-6">
           Fast, Secure Hosting & Domain Management

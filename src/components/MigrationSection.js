@@ -1,7 +1,8 @@
-// components/MigrationSection.jsx
+import React from "react";
+import MigrateImg from "./imgs/Migrateimg.PNG";
 const MigrationSection = () => {
     return (
-      <section className="bg-[#020B2A] py-20">
+      <section className="bg-[#09113f] py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -42,7 +43,7 @@ const MigrationSection = () => {
             
             <div className="relative">
               <img
-                src="https://example.com/migration-illustration.svg"
+                src ={MigrateImg}
                 alt="Website Migration"
                 className="w-full"
               />

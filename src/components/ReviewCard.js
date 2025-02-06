@@ -1,56 +1,56 @@
-// components/CustomerReviews.jsx
-import React from 'react';
-
-// components/ReviewCard.jsx
 const ReviewCard = () => {
-    const reviews = [
-      {
-        name: "Cyndi Papia",
-        rating: 2,
-        text: "Fast and top-notch support...",
-        time: "2 months ago"
-      },
-      {
-        name: "Paul",
-        rating: 5,
-        text: "I have an excellent customer service...",
-        time: "1 month ago"
-      },
-      {
-        name: "Redwan Rahman",
-        rating: 5,
-        text: "Ashfika is the best live support chat...",
-        time: "2 months ago"
-      },
-      {
-        name: "Clean Avenue Laundry",
-        rating: 5,
-        text: "Excellent service and attention...",
-        time: "2 months ago"
-      },
-      {
-        name: "Nagy Mohd",
-        rating: 5,
-        text: "Very good service and live support is...",
-        time: "1 month ago"
-      }
-    ];
-  
-    return (
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Hostrever Customers Reviews
-          </h2>
-          
-          <div className="flex overflow-x-auto gap-6 pb-6 -mx-4 px-4">
-            {reviews.map((review, index) => (
-              <div key={index} className="min-w-[300px] bg-white p-6 rounded-lg border border-gray-100">
-                <div className="flex gap-1">
+  const reviews = [
+    {
+      name: "Cyndi Papia",
+      rating: 2,
+      text: "Fast and top-notch support...",
+      time: "2 months ago",
+    },
+    {
+      name: "Paul",
+      rating: 5,
+      text: "I have an excellent customer service...",
+      time: "1 month ago",
+    },
+    {
+      name: "Redwan Rahman",
+      rating: 5,
+      text: "Ashfika is the best live support chat...",
+      time: "2 months ago",
+    },
+    {
+      name: "Clean Avenue Laundry",
+      rating: 5,
+      text: "Excellent service and attention...",
+      time: "2 months ago",
+    },
+    {
+      name: "Nagy Mohd",
+      rating: 5,
+      text: "Very good service and live support is...",
+      time: "1 month ago",
+    },
+  ]
+
+  return (
+    <section className="py-16 bg-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-12">Hostrever Customers Reviews</h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {reviews.map((review, index) => (
+            <div
+              key={index}
+              className="bg-white p-4 rounded-lg border border-gray-200 shadow-[2px_2px_10px_rgba(0,0,0,0.1)]"
+            >
+              <h3 className="font-medium text-base mb-2">{review.name}</h3>
+
+              <div className="flex justify-between items-center mb-2">
+                <div className="flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
-                      className={`w-5 h-5 ${i < review.rating ? 'text-[#00B67A]' : 'text-gray-300'}`}
+                      className={`w-4 h-4 ${i < review.rating ? "text-yellow-400" : "text-gray-200"}`}
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -58,23 +58,32 @@ const ReviewCard = () => {
                     </svg>
                   ))}
                 </div>
-                <p className="mt-3 mb-2">{review.text}</p>
-                <div className="flex justify-between items-center text-sm text-gray-500">
-                  <span>{review.name}</span>
-                  <span>{review.time}</span>
-                </div>
+                <img
+                  src="https://cdn.trustpilot.net/brand-assets/1.1.0/logo-black.svg"
+                  alt="Trustpilot"
+                  className="h-3 w-auto object-contain"
+                />
               </div>
-            ))}
-          </div>
-  
-          <div className="text-center mt-8">
-            <button className="border border-red-600 text-red-600 px-6 py-2 rounded-md hover:bg-red-50 transition-colors">
-              Read More Reviews
-            </button>
-          </div>
-        </div>
-      </section>
-    );
-  };
 
-export default ReviewCard;
+              <p className="text-gray-600 text-sm mb-3 min-h-[40px]">{review.text}</p>
+
+              <div className="flex justify-between items-center text-xs">
+                <button className="text-red-600 hover:text-red-700 font-medium">View Review</button>
+                <span className="text-gray-500">{review.time}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <button className="border-2 border-red-600 text-red-600 px-8 py-2.5 rounded-md hover:bg-red-50 transition-colors font-medium">
+            Read More Reviews
+          </button>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default ReviewCard
+

@@ -17,9 +17,9 @@ function App() {
    <HeroSection></HeroSection>
    <ReviewsBanner></ReviewsBanner>
    <PricingCard></PricingCard>
-   {/* <DomainSearch/>
+   <DomainSearch/>
    <MigrationSection></MigrationSection>
-   <FeatureCard></FeatureCard>
+   {/* <FeatureCard></FeatureCard>
    <ReviewCard></ReviewCard>
    <PerformanceCard></PerformanceCard>
    <SupportSection></SupportSection>

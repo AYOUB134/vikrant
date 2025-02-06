@@ -38,7 +38,7 @@ const SupportSection = () => {
         </div>
       </div>
 
-      <div className="bg-[#020B2A] mt-20 py-16 text-white text-center">
+      <div className="bg-[#09113f] mt-20 py-16 text-white text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-4">
             Save up to 75% on your plan + get a free domain

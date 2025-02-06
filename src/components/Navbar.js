@@ -10,7 +10,7 @@ const Navbar = () => {
   const navItems = ["Domain", "Hosting", "VPS", "Website Builder", "Blog"]
 
   return (
-    <header className="bg-[#020B2A]">
+    <header className="bg-[#09113f]">
       {/* Top bar */}
       <div className="border-b border-gray-700/50">
         <div className="container mx-auto px-6 h-14 flex items-center justify-between">
