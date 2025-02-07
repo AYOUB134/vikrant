@@ -1,5 +1,4 @@
-
-import { useState } from "react"
+import { useState } from "react";
 
 const StarRating = () => (
   <div className="flex gap-[2px]">
@@ -11,7 +10,7 @@ const StarRating = () => (
       </div>
     ))}
   </div>
-)
+);
 
 const ReviewCard = ({ author, time, text, verified }) => (
   <div className="bg-[#f8f8f8] p-5 rounded">
@@ -30,10 +29,10 @@ const ReviewCard = ({ author, time, text, verified }) => (
       )}
     </div>
   </div>
-)
+);
 
 const ReviewBanner = () => {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const reviews = [
     {
@@ -66,15 +65,15 @@ const ReviewBanner = () => {
       text: "I always get great support from NameHero!",
       verified: true,
     },
-  ]
+  ];
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % reviews.length)
-  }
+    setCurrentSlide((prev) => (prev + 1) % reviews.length);
+  };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + reviews.length) % reviews.length)
-  }
+    setCurrentSlide((prev) => (prev - 1 + reviews.length) % reviews.length);
+  };
 
   return (
     <section className="py-12 bg-white">
@@ -100,7 +99,7 @@ const ReviewBanner = () => {
                   <div
                     key={idx}
                     className={`transition-opacity duration-300 ${
-                      idx >= currentSlide && idx < currentSlide + 5 ? "opacity-100" : "opacity-0 hidden lg:block"
+                      idx === currentSlide ? "opacity-100" : "opacity-50"
                     }`}
                   >
                     <ReviewCard {...review} />
@@ -119,16 +118,15 @@ const ReviewBanner = () => {
             </div>
 
             <div className="text-center mt-8 mb-8">
-          <p className="text-sm text-gray-600">
-            Rated 4.9/5 based on 3,220 reviews. Showing our 4 & 5 star reviews.
-          </p>
-          <img 
-            src="https://cdn.trustpilot.net/brand-assets/1.1.0/logo-black.svg"
-            alt="Trustpilot"
-            className="h-6 mx-auto mt-2"
-          />
-        </div>
-
+              <p className="text-sm text-gray-600">
+                Rated 4.9/5 based on 3,220 reviews. Showing our 4 & 5 star reviews.
+              </p>
+              <img
+                src="https://cdn.trustpilot.net/brand-assets/1.1.0/logo-black.svg"
+                alt="Trustpilot"
+                className="h-6 mx-auto mt-2"
+              />
+            </div>
           </div>
         </div>
 
@@ -139,8 +137,7 @@ const ReviewBanner = () => {
         </p>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ReviewBanner
-
+export default ReviewBanner;

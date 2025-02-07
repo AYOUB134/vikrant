@@ -96,11 +96,11 @@ const  Footer = () => {
                   </a>
                   {/* <img src={item.payment.src || "/placeholder.svg"} alt={item.payment.alt} className="h-6" /> */}
                   <img 
-  src={item.payment.src || "/placeholder.svg"} 
-  alt={item.payment.alt} 
-  className="h-10 w-24 bg-gray-400  rounded"
-/>
-                </div>
+                src={item.payment.src || "/placeholder.svg"} 
+                alt={item.payment.alt} 
+                className="h-10 w-24 bg-gray-400  rounded"
+            />
+              </div>
               ))}
             </div>
           </div>

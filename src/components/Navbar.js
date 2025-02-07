@@ -128,7 +128,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-[#020B2A] py-4">
+        <div className="md:hidden bg-[#09113f] py-4">
           <div className="container mx-auto px-6">
             {navItems.map((item) => (
               <a
