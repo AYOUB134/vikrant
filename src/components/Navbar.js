@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from './imgs/newupdatedlogo.png'
+import logo from './imgs/chnagedlogo.png'
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -82,7 +82,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <img src={logo} alt="Logo" className="h-11 mt-0 ml-20" />
+        <img src={logo} alt="Logo" className="h-11 mt-0 ml-16" />
 
       </div>
       {/* Main navigation */}
