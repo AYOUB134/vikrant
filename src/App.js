@@ -13,15 +13,8 @@ import Footer from './components/Footer';
 import PricingCard from './components/PricingCard';
 import Home2 from './components/page2/Home';
 import Home3 from './components/page3/Home';
+import Home4 from './components/page4/Home'
 
-
-function Page2() {
-  return (
-    <div className="text-center mt-10">
-      <h1 className="text-4xl font-bold">Welcome to Page 2</h1>
-    </div>
-  );
-}
 
 function App() {
   return (
@@ -48,6 +41,7 @@ function App() {
         />
         <Route path="/home2" element={<Home2 />} />
         <Route path="/home3" element={<Home3 />} />
+        <Route path="/home4" element={<Home4 />} />
 
       </Routes>
   

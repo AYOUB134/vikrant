@@ -1,33 +1,38 @@
-"use client";
-
-const LinuxHosting = () => {
-  return (
-    <div className="bg-gradient-to-r from-blue-900 to-indigo-900 text-white py-16 px-8">
-      <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-4xl font-bold mb-6">Linux Shared Web Hosting with cPanel</h1>
-        <div className="flex justify-center space-x-8 mb-8">
-          <div className="flex items-center space-x-2">
-            <span className="text-red-500 text-xl font-bold">✔</span>
-            <p className="font-medium text-lg">24x7 Support</p>
+const HostingHero = () => {
+    return (
+      <section className="bg-[#09113f] min-h-[60vh] flex flex-col justify-center items-center px-4 py-16 text-white">
+        {/* Main Title */}
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center max-w-4xl leading-tight mb-2">
+          Linux Shared Web Hosting
+          <br />
+          with cPanel
+        </h1>
+  
+        {/* Features */}
+        <div className="flex flex-wrap justify-center gap-8 md:gap-12 my-10">
+          <div className="flex items-center gap-2 text-lg md:text-xl">
+            <i className="fa-solid fa-circle-check text-red-600"></i>
+            <span>24x7 Support</span>
           </div>
-          <div className="flex items-center space-x-2">
-            <span className="text-red-500 text-xl font-bold">✔</span>
-            <p className="font-medium text-lg">99.9% Uptime</p>
+          <div className="flex items-center gap-2 text-lg md:text-xl">
+            <i className="fa-solid fa-circle-check text-red-600"></i>
+            <span>99.9% Uptime</span>
           </div>
-          <div className="flex items-center space-x-2">
-            <span className="text-red-500 text-xl font-bold">✔</span>
-            <p className="font-medium text-lg">1-Click Installer</p>
+          <div className="flex items-center gap-2 text-lg md:text-xl">
+            <i className="fa-solid fa-circle-check text-red-600"></i>
+            <span>1-Click Installer</span>
           </div>
         </div>
-        <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-full text-lg transition">
+  
+        {/* CTA Button */}
+        <button className="bg-[#dc0000] hover:bg-[#b30000] text-white font-semibold px-8 py-4 rounded text-lg transition-colors duration-200 my-4">
           Get Started Now
         </button>
-        <p className="mt-4 text-gray-300 text-sm">
-          Proudly Trusted By Over <span className="font-semibold">750,000+ Websites</span>
-        </p>
-      </div>
-    </div>
-  );
-};
-
-export default LinuxHosting;
+  
+        {/* Trust Text */}
+        <p className="text-base md:text-lg opacity-90 mt-4">Proudly Trusted By Over 750,000+ Websites</p>
+      </section>
+    )
+  }
+  
+  export default HostingHero
