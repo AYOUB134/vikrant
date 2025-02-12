@@ -101,11 +101,18 @@ const  Footer = () => {
                 className="h-12 w-24 bg-gray-400  "
             /> */}
 
-                  <img 
+                  {/* <img 
                       src={item.payment.src || "/placeholder.svg"} 
                       alt={item.payment.alt} 
                       className="h-12 w-24 object-contain scale-150"
-                  />
+                  /> */}
+
+            <img 
+                src={item.payment.src || "/placeholder.svg"} 
+                alt={item.payment.alt} 
+                className="w-28 h-16 md:w-32 md:h-20 lg:w-36 lg:h-24 object-contain"
+            />
+
 
               </div>
               ))}
