@@ -99,7 +99,7 @@ const ReviewBanner = () => {
                   <div
                     key={idx}
                     className={`transition-opacity duration-300 ${
-                      idx === currentSlide ? "opacity-100" : "opacity-50"
+                      idx === currentSlide ? "opacity-100" : "opacity-100"
                     }`}
                   >
                     <ReviewCard {...review} />

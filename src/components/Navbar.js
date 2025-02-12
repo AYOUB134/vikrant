@@ -83,7 +83,9 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
       <img src={logo} alt="Logo" className="h-11 mt-0 ml-16" />
+
       {/* Main navigation */}
       <div className="container mx-auto px-6">
         <nav className="h-20 flex items-center justify-between">

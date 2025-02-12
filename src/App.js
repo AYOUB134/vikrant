@@ -10,7 +10,7 @@ import ReviewCard from './components/ReviewCard';
 import PerformanceCard from './components/PerformanceCard';
 import SupportSection from './components/SupportSection';
 import Footer from './components/Footer';
-import PricingCard from './components/PricingCard';
+import CopyPricingPlan from './components/CopyPricingPlan'
 import Home2 from './components/page2/Home';
 import Home3 from './components/page3/Home';
 import Home4 from './components/page4/Home'
@@ -28,7 +28,7 @@ function App() {
             <Navbar/>
               <HeroSection />
               <ReviewsBanner />
-              <PricingCard />
+              <CopyPricingPlan/>
               <DomainSearch />
               <MigrationSection />
               <FeatureCard />

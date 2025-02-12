@@ -90,16 +90,23 @@ const  Footer = () => {
               {socialAndPayments.map((item, index) => (
                 <div key={index} className="flex flex-col items-center gap-8">
                   <a href={item.social.href} className="text-gray-400 hover:text-gray-600">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
                       {item.social.icon}
                     </svg>
                   </a>
                   {/* <img src={item.payment.src || "/placeholder.svg"} alt={item.payment.alt} className="h-6" /> */}
-                  <img 
+                  {/* <img 
                 src={item.payment.src || "/placeholder.svg"} 
                 alt={item.payment.alt} 
-                className="h-10 w-24 bg-gray-400  rounded"
-            />
+                className="h-12 w-24 bg-gray-400  "
+            /> */}
+
+                  <img 
+                      src={item.payment.src || "/placeholder.svg"} 
+                      alt={item.payment.alt} 
+                      className="h-12 w-24 object-contain scale-150"
+                  />
+
               </div>
               ))}
             </div>
