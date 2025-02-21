@@ -25,7 +25,7 @@ const RightSidebar = () => {
     }, [ads.length]);
 
     return (
-        <aside className="w-64 p-5 bg-gray-200 space-y-2 relative overflow-hidden h-100">
+        <aside className="w-64 p-5 bg-gray-900 space-y-2 relative overflow-hidden h-100">
             <div className="absolute inset-0 flex flex-col items-center justify-start transition-transform duration-500"
                  style={{ transform: `translateY(-${currentIndex * 100}%)` }}>
                 {ads.map((ad, i) => (

@@ -4,7 +4,8 @@ import Sidebar from "../components/Sidebar";
 import MainContent from "../components/MainContent";
 import RightSidebar from "../components/RightSidebar";
 import Popup from "../components/Popup";
-
+import Tournamentwinner from '../components/TournamentWinner'
+import BetSlip from '../components/BetSlip'
 export default function Page1() {
   const [showPopup, setShowPopup] = useState(true);
 
@@ -14,8 +15,10 @@ export default function Page1() {
       <Navbar />
       <div className="flex flex-1 overflow-hidden">
         <Sidebar />
-        <MainContent />
-        <RightSidebar />
+        {/* <MainContent /> */}
+      <Tournamentwinner/>
+      <BetSlip></BetSlip>
+        {/* <RightSidebar /> */}
       </div>
     </div>
   );
