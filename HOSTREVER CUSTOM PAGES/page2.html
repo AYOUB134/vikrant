@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        .custom-bg {
+            background-color: #09113f;
+            /* Updated to match your React component */
+        }
+
+        .navbar-custom {
+            position: sticky;
+            top: 0;
+            z-index: 1050;
+            background-color: #09113f;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .navbar-custom.sticky {
+            background-color: white;
+        }
+
+        .navbar-custom.sticky .nav-link,
+        .navbar-custom.sticky .navbar-brand {
+            color: black;
+        }
+
+        .navbar-custom.sticky .navbar-brand img {
+            content: url('./img/whitecolorlogo-removebg-preview.png');
+        }
+
+        .full-height {
+            min-height: 78vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .star {
+            background-color: #00b67a;
+            /* padding: .5px; */
+            border-radius: 3px;
+            display: inline-block;
+        }
+
+        .star svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+
+        .review-card {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .verified-badge {
+            color: #00b67a;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+        }
+        .feature-card {
+      background-color: white;
+      border-radius: 50%;
+      padding: 20px;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 0 auto 20px;
+    }
+    .feature-icon {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+    }
+    .row.g-4 > [class*='col-'] {
+      margin-bottom: 30px;
+    }
+    .review-card {
+      background-color: white;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      border: 1px solid #dee2e6;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+    }
+    .star {
+      color: #ffc107;
+    }
+    .star-empty {
+      color: #e4e5e9;
+    }
+    .performance-card {
+      background-color: #0c1655;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+    .icon-circle {
+      width: 4rem;
+      height: 4rem;
+      background-color: #e2e3e5;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem auto;
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+    }
+    .icon-circle img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    .performance-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.75rem;
+    }
+    .performance-desc {
+      color: #adb5bd;
+    }
+    .support-section h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .support-card {
+      background-color: white;
+      border: 1px solid #dee2e6;
+      border-radius: 0.5rem;
+      padding: .5rem;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+    .support-card:hover {
+      background-color: #f8f9fa;
+    }
+    .support-icon {
+      color: #dc3545;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .cta-section {
+      background-color: #09113f;
+      color: white;
+      padding: 5rem 0;
+      text-align: center;
+    }
+    .footer-link {
+      font-weight: bold;
+      transition: transform 0.3s, color 0.3s;
+    }
+    .footer-link:hover {
+      color: #f8b400 !important;
+      text-decoration: underline !important;
+      transform: translateY(-3px);
+    }
+    footer {
+      /* background: linear-gradient(135deg, #1e1e1e, #343a40); */
+    }
+    .social-icons a {
+      color: #f8b400;
+      margin-right: 15px;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #fff;
+    }
+    .faq-container {
+      padding: 4rem 1rem;
+      background-color: #fff;
+      width: 70%;
+      margin: 0 auto;
+    }
+    .faq-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .faq-subtitle {
+      text-align: center;
+      color: #6c757d;
+      margin-bottom: 2rem;
+    }
+    .accordion-button {
+      text-align: left;
+    }
+    .accordion-button::after {
+      content: '\2b'; /* Plus sign */
+      font-size: 1.5rem;
+      transition: transform 0.2s;
+    }
+    .accordion-button[aria-expanded="true"]::after {
+      content: '\2212'; /* Minus sign */
+    }
+    .search-section {
+      min-height: 100vh;
+      background-color: #09113f;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+    .search-bar {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .domain-card {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      transition: border-color 0.3s;
+    }
+    .domain-card:hover {
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+    .icon {
+      width: 60px;
+      height: 60px;
+    }
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+    .feature-box {
+      background-color: #09113f;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+    }
+
+
+
+
+
+
+    .navbar-custom {
+            position: sticky;
+            top: 0;
+            z-index: 1050;
+            background-color: #09113f;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .navbar-custom.sticky {
+            background-color: white;
+        }
+
+        .navbar-custom.sticky .nav-link,
+        .navbar-custom.sticky .navbar-brand {
+            color: black !important;
+        }
+
+        .navbar-custom.sticky .navbar-brand img {
+            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(93deg) brightness(104%) contrast(103%);
+        }
+
+        .full-height {
+            min-height: 78vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+
+
+<!-- header section -->
+    <!-- header section -->
+    <header class="custom-bg">
+      <div class="container">
+          <div class="d-flex justify-content-between align-items-center py-2 px-3">
+              <div class="text-light d-flex align-items-center gap-2" style="font-size: 12px;">
+                  <span class="">Call us now: 0113 541 7880</span>
+              </div>
+              <div class="d-none d-md-flex align-items-center gap-4">
+                  <button class="btn text-light d-flex align-items-center gap-2" style="font-size: 12px;">
+                      <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="" width="20" />
+                      Live Chat
+                  </button>
+                  <button class="btn text-light d-flex align-items-center gap-2" style="font-size: 12px;">
+                      <img src="https://img.icons8.com/ios-filled/50/ffffff/email.png" alt="" width="20" />
+                      Contact Us
+                  </button>
+                  <div class="position-relative text-light d-flex align-items-center gap-2" style="font-size: 12px;">
+                      <img src="https://img.icons8.com/ios-filled/50/ffffff/shopping-cart.png" alt="" width="20" />
+                      <span>Cart</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header>
+
+  <!-- Navbar section -->
+  <nav class="navbar navbar-expand-md navbar-dark navbar-custom sticky-top">
+      <div class="container">
+          <a class="navbar-brand" href="#">
+              <img src="./img/whitecolorlogo-removebg-preview.png" alt="Logo" height="40">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+              <ul class="navbar-nav gap-3">
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle text-light" href="#domain" role="button" data-bs-toggle="dropdown">Domain</a>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#domain-registration">Domain Registration</a></li>
+                          <li><a class="dropdown-item" href="#domain-transfer">Domain Transfer</a></li>
+                      </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle text-light" href="#hosting" role="button" data-bs-toggle="dropdown">Hosting</a>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#shared-hosting">Shared Hosting</a></li>
+                          <li><a class="dropdown-item" href="#cloud-hosting">Cloud Hosting</a></li>
+                      </ul>
+                  </li>
+                  <li class="nav-item"><a class="nav-link text-light" href="#vps">VPS</a></li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle text-light" href="#website-builder" role="button" data-bs-toggle="dropdown">Website Builder</a>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#builder-tools">Builder Tools</a></li>
+                          <li><a class="dropdown-item" href="#templates">Templates</a></li>
+                      </ul>
+                  </li>
+                  <li class="nav-item">
+                      <button class="btn btn-light text-dark border">Client Area</button>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+
+    <!-- herofinddomain section -->
+    <section class="search-section">
+        <div class="container">
+          <h1 class="display-4 fw-bold mb-4">Find Your Perfect Domain Name Today</h1>
+          <p class="lead mb-5">Use our domain checker tool to quickly check domain availability. Simply enter the name you want, and get instant results.</p>
+    
+          <div class="input-group mb-5 search-bar">
+            <span class="input-group-text bg-white text-secondary"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control py-3" placeholder="Search for your perfect domain...">
+            <button class="btn btn-danger px-5 py-3">Search</button>
+          </div>
+    
+          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3 mb-5">
+            <div class="col">
+              <div class="domain-card text-center">
+                <h5 class="fw-bold">.com</h5>
+                <p class="text-decoration-line-through text-white-50">US$ 16.99</p>
+                <p class="fw-bold">US$ 4.99</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="domain-card text-center">
+                <h5 class="fw-bold">.online</h5>
+                <p class="text-decoration-line-through text-white-50">US$ 34.99</p>
+                <p class="fw-bold">US$ 1.99</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="domain-card text-center">
+                <h5 class="fw-bold">.shop</h5>
+                <p class="text-decoration-line-through text-white-50">US$ 34.99</p>
+                <p class="fw-bold">US$ 0.99</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="domain-card text-center">
+                <h5 class="fw-bold">.pro</h5>
+                <p class="text-decoration-line-through text-white-50">US$ 24.99</p>
+                <p class="fw-bold">US$ 2.99</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="domain-card text-center">
+                <h5 class="fw-bold">.net</h5>
+                <p class="text-decoration-line-through text-white-50">US$ 15.99</p>
+                <p class="fw-bold">US$ 11.99</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="domain-card text-center">
+                <h5 class="fw-bold">.xyz</h5>
+                <p class="text-decoration-line-through text-white-50">US$ 13.99</p>
+                <p class="fw-bold">US$ 1.99</p>
+              </div>
+            </div>
+          </div>
+    
+          <p class="text-white-50 mb-2">Free WHOIS privacy protection is included with every eligible domain registration.</p>
+          <p class="text-white-50">Already bought a domain? <a href="#" class="text-white text-decoration-underline">Transfer it</a></p>
+        </div>
+      </section>
+
+
+
+<!-- Why HostRever Domain -->
+<section class="py-5 bg-white">
+    <div class="container text-center mb-5">
+      <h2 class="fw-bold mb-3">Why Buy Domain Names at Hostrever?</h2>
+      <p class="text-muted mx-auto" style="">
+        Hostrever provides reliable domain registration with instant activation, 24/7 live support, and complete DNS management.
+      </p>
+    </div>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4 d-flex flex-column align-items-center text-center">
+          <img src="./img/chaticon.PNG" alt="24/7 Support" class="icon mb-3"/>
+          <h5 class="fw-bold">24/7 live technical support</h5>
+          <p class="text-muted">Our Customer Success team is available 24/7 to support you. We're always here to lend a helping hand whenever you need it.</p>
+        </div>
+        <div class="col-md-4 d-flex flex-column align-items-center text-center">
+          <img src="./img/easyregistrationicon.PNG" alt="Easy Registration" class="icon mb-3"/>
+          <h5 class="fw-bold">Easy Domain Registration</h5>
+          <p class="text-muted">Secure your domain name today! Registering with us is fast and hassle-free, ensuring no one else claims it before you.</p>
+        </div>
+        <div class="col-md-4 d-flex flex-column align-items-center text-center">
+          <img src="./img//protectprivacyicon.PNG" alt="Protect Privacy" class="icon mb-3"/>
+          <h5 class="fw-bold">Protect Your Privacy</h5>
+          <p class="text-muted">Shield yourself from scammers and spammers with our Domain ID Protection add-on, keeping your personal information safe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Domain Registration -->
+  <section class="py-5 text-white" style="background-color: #09113f;">
+    <div class="container text-center mb-5">
+      <h2 class="fw-bold mb-3">Why choose Hostrever for Domain Name Registration?</h2>
+      <p class="text-light mx-auto" style="max-width: 700px;">
+        Deliver exceptional reliability and seamless efficiency to ensure a smooth experience for your website visitors.
+      </p>
+    </div>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4 feature-box">
+          <img src="./img/icons1.PNG" alt="Globe Icon" class="feature-icon" />
+          <h5 class="fw-bold">Get a Free Domain Name</h5>
+          <p>With most of Hostrever's web hosting plans, you can register a domain name for free. Choose from popular extensions like .com, .net, .org, and more – all included at no extra cost!</p>
+        </div>
+        <div class="col-md-4 feature-box">
+          <img src="./img/icon2.png" alt="Shield Icon" class="feature-icon" />
+          <h5 class="fw-bold">Free Privacy Protection</h5>
+          <p>Hostrever prioritizes your privacy by safeguarding your domain registration data. Our free privacy protection service keeps your details hidden from third parties.</p>
+        </div>
+        <div class="col-md-4 feature-box">
+          <img src="./img/icon3.png" alt="Settings Icon" class="feature-icon" />
+          <h5 class="fw-bold">Easy Domain Management</h5>
+          <p>Managing your domain names is easy with Hostrever's user-friendly client portal. Seamlessly handle everything in one place!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      <!-- FAQ section -->
+  <div class="faq-container">
+    <h2 class="faq-title">Web Hosting FAQs</h2>
+    <p class="faq-subtitle">Discover answers to the most frequently asked questions about web server hosting.</p>
+
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item" id="faq1">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+            What Is Web Hosting And Why Is It Important?
+          </button>
+        </h2>
+        <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Web hosting is essential as it allows your website to be accessible on the internet.</div>
+        </div>
+      </div>
+      <div class="accordion-item" id="faq2">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+            How to Purchase a Hosting Plan?
+          </button>
+        </h2>
+        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Choose a plan, sign up, and complete the payment to get started.</div>
+        </div>
+      </div>
+      <div class="accordion-item" id="faq3">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+            Will I Receive Support for My Web Hosting?
+          </button>
+        </h2>
+        <div id="collapse3" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>Hostinger offers 24/7 multilingual support from experts.</p>
+            <p>Contact through <a href="#">live chat</a> or explore <a href="#">Hostinger Tutorials</a> and <a href="#">Hostinger Academy</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("scroll", function() {
+        const navbar = document.querySelector(".navbar-custom");
+        if (window.scrollY > 0) {
+            navbar.classList.add("sticky");
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    });
+</script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
